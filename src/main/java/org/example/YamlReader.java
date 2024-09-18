@@ -8,5 +8,7 @@ import java.io.IOException;
 public class YamlReader {
     public static void main(String[] args) {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+
+        int hallo;
     }
 }
