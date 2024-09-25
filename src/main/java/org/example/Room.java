@@ -5,7 +5,7 @@ import java.util.List;
 public class Room {
     private String name;
     private String description;
-    private Map<String, Map<String, List<Actions>>> verbs;  // Verb -> Object -> List of Actionss
+    private Map<String, Map<String, List<Actions>>> verbs;
 
     // Getter und Setter
     public String getName() {

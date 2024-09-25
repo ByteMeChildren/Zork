@@ -1,10 +1,10 @@
 package org.example;
 
 public class Actions {
-    private String room;  // Optional, falls der Raum gewechselt wird
-    private String message;  // Nachricht, die an den Spieler ausgegeben wird
-    private String addState;  // Optional, wenn ein neuer Status hinzugefügt wird
-    private String ifState;  // Optional, wenn eine Aktion von einem bestimmten Status abhängt
+    private String room;
+    private String message;
+    private String addState;
+    private String ifState;
 
     // Getter und Setter
     public String getRoom() {

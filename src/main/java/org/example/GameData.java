@@ -5,8 +5,8 @@ import java.util.Map;
 public class GameData {
     private String startRoom;
     private String description;
-    private Map<String, Room> rooms;  // Liste der Räume
-    private Map<String, Verb> verbs;  // Globale Verben
+    private Map<String, Room> rooms;
+    private Map<String, Verb> verbs;
 
     // Getter und Setter
     public String getStartRoom() {
