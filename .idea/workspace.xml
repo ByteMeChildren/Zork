@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa4d0914-b954-4fb0-ba82-ab7fd716e3dc" name="Changes" comment="Objekteklassen erstellt">
+    <list default="true" id="aa4d0914-b954-4fb0-ba82-ab7fd716e3dc" name="Changes" comment="Kann jetzt lesen. Loop muss noch gemacht werden">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Actions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Actions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/YamlReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/YamlReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,10 +50,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -130,6 +128,8 @@
       <workItem from="1726652028590" duration="1366000" />
       <workItem from="1726849889814" duration="3304000" />
       <workItem from="1727072095627" duration="5698000" />
+      <workItem from="1727245228584" duration="7934000" />
+      <workItem from="1727768514227" duration="488000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <option name="closed" value="true" />
@@ -219,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726852287829</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Kann jetzt lesen. Loop muss noch gemacht werden">
+      <option name="closed" value="true" />
+      <created>1727245299408</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1727245299408</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +253,7 @@
     <MESSAGE value="Upload" />
     <MESSAGE value="TestXY" />
     <MESSAGE value="Objekteklassen erstellt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Objekteklassen erstellt" />
+    <MESSAGE value="Kann jetzt lesen. Loop muss noch gemacht werden" />
+    <option name="LAST_COMMIT_MESSAGE" value="Kann jetzt lesen. Loop muss noch gemacht werden" />
   </component>
 </project>

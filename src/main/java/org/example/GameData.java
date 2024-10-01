@@ -13,10 +13,6 @@ public class GameData {
         return startRoom;
     }
 
-    public void setStartRoom(String startRoom) {
-        this.startRoom = startRoom;
-    }
-
     public String getDescription() {
         return description;
     }
