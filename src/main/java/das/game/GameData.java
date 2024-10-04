@@ -1,4 +1,4 @@
-package org.example;
+package das.game;
 
 import java.util.Map;
 
@@ -21,9 +21,7 @@ public class GameData {
         this.description = description;
     }
 
-    public Map<String, Room> getRooms() {
-        return rooms;
-    }
+    public Map<String, Room> getRooms() { return rooms; }
 
     public void setRooms(Map<String, Room> rooms) {
         this.rooms = rooms;
