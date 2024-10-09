@@ -40,22 +40,16 @@ public class YamlReader
               var currentRoom = gameData.getRooms().get(roomId); //Mit Schlüssel gibt RoomObjekt zurück
               System.out.println(currentRoom.getDescription());
               var text = input();
-              var verbList = currentRoom.getVerbs().keySet();
-              if(text.equalsIgnoreCase("help"))
-              {
-                  System.out.println(verbList);
-                 input();
-              }
-              else
-              {
               String[] ausgabe = text.split(" ");
               var verb = ausgabe[0];
               var object = ausgabe[1];
+              var generalVerbs = currentRoom.getVerbs().get(verb);
+              var generalVerbList = generalVerbs.keySet();
               var conditionMet = false;
 
-                  for (var i : verbList)
+                  for (var x : generalVerbList)
                   {
-                      if (verb.equalsIgnoreCase(i))
+                      if (verb.equalsIgnoreCase(x))
                       {
                           conditionMet = true;  // Übereinstimmung gefunden, conditionMet auf true setzen
                           break;
@@ -65,7 +59,9 @@ public class YamlReader
                   {
                       System.out.println("I don't understand what you're saying \n" + "Writing \"help\" might help you out, who knows \n \n");
                   }
+/*
 
+ */
               var actions = currentRoom.getVerbs().get(verb).get(object);
               var currentVerb = currentRoom.getVerbs().get(verb);
               var currentObject = currentRoom.getVerbs().get(object);
@@ -89,13 +85,9 @@ public class YamlReader
                       System.out.println("Unknown action: " + object + "\n" + "\n" + "Writing \"help\" might help you out, who knows \n \n");
                   }
 
-            /*
-            muss erkennen welches wort ==null
-            inventory
-            problem solving
-             */
 
-              }
+
+
           }
     }
 }
