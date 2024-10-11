@@ -19,10 +19,7 @@ public class GameData {
 
     public Map<String, Room> getRooms() { return rooms; }
 
-    public Map<String, Verb> getVerbs() {
-        return verbs;
-    }
-
+    public Map<String, Verb> getVerbs() { return verbs; }
 }
 
 

@@ -5,23 +5,17 @@ import java.util.Map;
 
 public class Verb {
     private List<String> synonyms;
-    private Map<String, String> errors;  // Verb-Fehlermeldungen
+    private String verb;
+
 
     // Getter und Setter
     public List<String> getSynonyms() {
         return synonyms;
     }
 
-    public void setSynonyms(List<String> synonyms) {
-        this.synonyms = synonyms;
-    }
+    public String getVerbError() { return verb; }
 
-    public Map<String, String> getErrors() {
-        return errors;
-    }
 
-    public void setErrors(Map<String, String> errors) {
-        this.errors = errors;
-    }
+
 }
 
