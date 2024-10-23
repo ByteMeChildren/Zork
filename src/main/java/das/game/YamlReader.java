@@ -24,7 +24,7 @@ public class YamlReader
     public static void main(String[] args) throws IOException
     {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-            GameData gameData = mapper.readValue(new File("C:\\Users\\adm.kuzs\\IdeaProjects\\Zork\\src\\main\\resources\\tutorial.yaml"), GameData.class);
+            GameData gameData = mapper.readValue(new File("src/main/resources/tutorial.yaml"), GameData.class);
             System.out.println("Start room: " + gameData.getStartRoom());
             System.out.println("Game description: "+ gameData.getDescription());
             System.out.println("Number of rooms: " + gameData.getRooms().size());
@@ -33,14 +33,13 @@ public class YamlReader
 
           while(true)
           {
-
+              var defaultError = gameData.getVerbs().get("default").getErrors().verb();
               var currentRoom = gameData.getRooms().get(roomId); //Mit Schlüssel gibt RoomObjekt zurück
               System.out.println(currentRoom.getDescription());
               var text = input().trim();
-
                   while(text.equalsIgnoreCase(""))
                   {
-                      System.out.println("Your input is invalid");
+                      System.out.println(defaultError);
                       text = input().trim();
                   }
               String[] ausgabe = text.split(" ");
@@ -53,7 +52,6 @@ public class YamlReader
               var currentVerbs = currentRoom.getVerbs().keySet();
               var inputVerb = gameData.getVerbs().keySet();
               var conditionMet = false;
-
                   for (var i : inputVerb)       //i speichert bei jedem durchgang eines der generellen Verben und prüft ob dein Input == eines der verben ist
                   {
                       var synonymList = gameData.getVerbs().get(i).getSynonyms();  //Setzt die Synonymliste immer neu bei jedem druchgang, da wir bei allen verben die synonyme prüfen wollen
@@ -74,11 +72,13 @@ public class YamlReader
                   }
                   if (!conditionMet) //wenn nicht true ist-->
                   {
-                      System.out.println("I don't understand what you're saying \n" + "Writing \"help\" might help you out, who knows \n \n");
+                      System.out.println(defaultError + "\n \n");
                       //ist noch provisorisch
                   }
-
-
+              var verbError = gameData.getVerbs().get(verb).getErrors().verb();
+              var objectError = gameData.getVerbs().get(verb).getErrors().object();
+              var helpError = gameData.getVerbs().get("help").getErrors().verb();
+              var helpTipp = gameData.getVerbs().get("help").getErrors().object();
               var actions = currentRoom.getVerbs().get(verb).get(object);
               var currentVerb = currentRoom.getVerbs().get(verb);
                   if(actions != null)
@@ -88,6 +88,14 @@ public class YamlReader
                           roomId = new_action.getRoom();
                       }
                   }
+                  else
+                  {
+                      System.out.print(verbError);
+                  }
           }
     }
 }
+//"\n" + helpError + "\n\n" + helpTipp
+//prüfen was falsch ist
+//if/addstates machen
+//map erwweitern

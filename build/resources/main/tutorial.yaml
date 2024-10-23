@@ -79,7 +79,9 @@ rooms: # Map<String, Room>
 verbs:
   default:
     errors:
-      verb: You cannot do that.
+      verb: |
+        I don't understand the verb you're saying.
+        Writing "help" might help you out, who knows!
       object: ""
   help:
     errors:

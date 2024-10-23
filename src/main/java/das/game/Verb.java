@@ -1,11 +1,14 @@
 package das.game;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+import java.security.Key;
 import java.util.List;
 import java.util.Map;
 
 public class Verb {
     private List<String> synonyms;
-    private String verb;
+    private Errors errors;
 
 
     // Getter und Setter
@@ -13,9 +16,8 @@ public class Verb {
         return synonyms;
     }
 
-    public String getVerbError() { return verb; }
-
-
-
+    public Errors getErrors() {
+        return errors;
+    }
 }
 
