@@ -89,8 +89,7 @@ verbs:
         Most of the time, typing something like <verb object> works. Example: <open door>.
         You can go to a possible direction typing <go (direction)>.
         You can examine the room or any object typing <examine (object)>. Look around with <look>.
-        Type <help verbs> to get a list of possible verbs.
-      object: "Possible verbs include: go, take, examine, open,..."
+      object: "Possible verbs include: go, take, look, open...."
   go:
     synonyms: [ walk, drive, climb, move ]
     errors:

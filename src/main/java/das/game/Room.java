@@ -19,8 +19,4 @@ public class Room {
     public Map<String, Map<String, List<Actions>>> getVerbs() {
         return verbs;
     }
-
-    public void setVerbs(Map<String, Map<String, List<Actions>>> verbs) {
-        this.verbs = verbs;
-    }
 }

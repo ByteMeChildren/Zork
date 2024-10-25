@@ -43,7 +43,7 @@ public class YamlReader
                       text = input().trim();
                   }
               String[] ausgabe = text.split(" ");
-              var verb = ausgabe[0];             
+              var verb = ausgabe[0];
               var object = "";
 
                   if (ausgabe.length > 1) {
@@ -79,41 +79,39 @@ public class YamlReader
                   if (!conditionMet) //wenn nicht true ist-->
                   {
                       System.out.println(defaultError + space);
-                      //ist noch provisorisch
+
                   }
-
-
-              if(conditionMet)
-              {
-                  var verbError = gameData.getVerbs().get(verb).getErrors().verb();
-                  if (ausgabe.length == 2)
+                  else
                   {
-                      if (currentVerbs.contains(verb))
+                      var verbError = gameData.getVerbs().get(verb).getErrors().verb();
+                      if (ausgabe.length == 2)
                       {
-                          var actions = currentRoom.getVerbs().get(verb).get(object);
-                          if (actions != null)
+                          if (currentVerbs.contains(verb))
                           {
-                              for (var new_action : actions)
+                              var actions = currentRoom.getVerbs().get(verb).get(object);
+                              if (actions != null)
                               {
-                                  roomId = new_action.getRoom();
+                                  for (var new_action : actions)
+                                  {
+                                      roomId = new_action.getRoom();
+                                  }
+                              }
+                              else
+                              {
+                                  var objectError = gameData.getVerbs().get(verb).getErrors().object();
+                                  System.out.println(objectError.replace("{}", object) + space);
                               }
                           }
                           else
                           {
-                              var objectError = gameData.getVerbs().get(verb).getErrors().object();
-                              System.out.println(objectError.replace("{}", object) + space);
+                              System.out.println(verbError + space);
                           }
                       }
                       else
                       {
-                          System.out.println(verbError + space);
+                          System.out.println(helpError + space + helpTipp + space);
                       }
                   }
-                  else
-                  {
-                      System.out.println(helpError + space + helpTipp + space);
-                  }
-              }
           }
     }
 }
