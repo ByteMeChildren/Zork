@@ -58,17 +58,17 @@ public class YamlReader
               var currentVerbs = currentRoom.getVerbs().keySet();
               var inputVerb = gameData.getVerbs().keySet();
               var conditionMet = false;
-                  for (var i : inputVerb)       //i speichert bei jedem durchgang eines der generellen Verben und prüft ob dein Input == eines der verben ist
+                  for (var i : inputVerb)
                   {
-                      var synonymList = gameData.getVerbs().get(i).getSynonyms();  //Setzt die Synonymliste immer neu bei jedem druchgang, da wir bei allen verben die synonyme prüfen wollen
+                      var synonymList = gameData.getVerbs().get(i).getSynonyms();
                       if(verb.equalsIgnoreCase(i))
                       {
                           conditionMet = true;
                           break;
                       }
-                      else if(synonymList != null) //wenn input nicht == generelles verb, dann prüfen wir ob das Generelle verb überhaupt eine synonym kategorie hat. falls ja, dann geht es in die Loop
+                      else if(synonymList != null)
                       {
-                          if(synonymList.contains(verb)) //wenn die synonymList deinen input enthält, dann geht es aus der For-Loop raus und geht weiter
+                          if(synonymList.contains(verb))
                           {
                               conditionMet = true;
                               verb = i;
@@ -76,7 +76,7 @@ public class YamlReader
                           }
                       }
                   }
-                  if (!conditionMet) //wenn nicht true ist-->
+                  if (!conditionMet)
                   {
                       System.out.println(defaultError + space);
 
@@ -116,6 +116,4 @@ public class YamlReader
     }
 }
 
-//prüfen was falsch ist
 //if/addstates machen
-//map erwweitern
