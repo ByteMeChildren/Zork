@@ -11,7 +11,7 @@ public class Verb {
     private Errors errors;
 
 
-    // Getter und Setter
+    // Getter
     public List<String> getSynonyms() {
         return synonyms;
     }

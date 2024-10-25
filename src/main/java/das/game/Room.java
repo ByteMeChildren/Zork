@@ -7,7 +7,7 @@ public class Room {
     private String description;
     private Map<String, Map<String, List<Actions>>> verbs;
 
-    // Getter und Setter
+    // Getter
     public String getName() {
         return name;
     }

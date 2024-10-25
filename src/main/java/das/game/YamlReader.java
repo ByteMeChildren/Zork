@@ -30,7 +30,7 @@ public class YamlReader
             System.out.println("Number of rooms: " + gameData.getRooms().size());
 
     var roomId = gameData.getStartRoom(); //Speichert den Key der Map(String)
-
+    var space = "\n \n";
           while(true)
           {
               var defaultError = gameData.getVerbs().get("default").getErrors().verb();
@@ -44,11 +44,17 @@ public class YamlReader
                   }
               String[] ausgabe = text.split(" ");
               var verb = ausgabe[0];             
-              var object = ausgabe[1];
+              var object = "";
+
+                  if (ausgabe.length > 1) {
+                      object = ausgabe[1];
+                  }
                   if(ausgabe.length > 2)
                   {
                       System.out.println("The input syntax is limited to a maximum of 2 strings, I'm just gonna ignore everything behind " + "\"" + object + "\"");
                   }
+              var helpError = gameData.getVerbs().get("help").getErrors().verb();
+              var helpTipp = gameData.getVerbs().get("help").getErrors().object();
               var currentVerbs = currentRoom.getVerbs().keySet();
               var inputVerb = gameData.getVerbs().keySet();
               var conditionMet = false;
@@ -72,30 +78,46 @@ public class YamlReader
                   }
                   if (!conditionMet) //wenn nicht true ist-->
                   {
-                      System.out.println(defaultError + "\n \n");
+                      System.out.println(defaultError + space);
                       //ist noch provisorisch
                   }
-              var verbError = gameData.getVerbs().get(verb).getErrors().verb();
-              var objectError = gameData.getVerbs().get(verb).getErrors().object();
-              var helpError = gameData.getVerbs().get("help").getErrors().verb();
-              var helpTipp = gameData.getVerbs().get("help").getErrors().object();
-              var actions = currentRoom.getVerbs().get(verb).get(object);
-              var currentVerb = currentRoom.getVerbs().get(verb);
-                  if(actions != null)
+
+
+              if(conditionMet)
+              {
+                  var verbError = gameData.getVerbs().get(verb).getErrors().verb();
+                  if (ausgabe.length == 2)
                   {
-                      for(var new_action : actions)
+                      if (currentVerbs.contains(verb))
                       {
-                          roomId = new_action.getRoom();
+                          var actions = currentRoom.getVerbs().get(verb).get(object);
+                          if (actions != null)
+                          {
+                              for (var new_action : actions)
+                              {
+                                  roomId = new_action.getRoom();
+                              }
+                          }
+                          else
+                          {
+                              var objectError = gameData.getVerbs().get(verb).getErrors().object();
+                              System.out.println(objectError.replace("{}", object) + space);
+                          }
+                      }
+                      else
+                      {
+                          System.out.println(verbError + space);
                       }
                   }
                   else
                   {
-                      System.out.print(verbError);
+                      System.out.println(helpError + space + helpTipp + space);
                   }
+              }
           }
     }
 }
-//"\n" + helpError + "\n\n" + helpTipp
+
 //prüfen was falsch ist
 //if/addstates machen
 //map erwweitern
