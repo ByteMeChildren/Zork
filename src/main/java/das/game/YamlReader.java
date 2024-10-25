@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
 public class YamlReader
 {
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    private static String input()       //Methode zum Input auffordern
+    private static String input()
     {
         try
         {
@@ -29,7 +29,7 @@ public class YamlReader
             System.out.println("Game description: "+ gameData.getDescription());
             System.out.println("Number of rooms: " + gameData.getRooms().size());
 
-    var roomId = gameData.getStartRoom(); //Speichert den Key der Map(String)
+    var roomId = gameData.getStartRoom();
     var space = "\n \n";
           while(true)
           {
